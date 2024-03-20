@@ -6,8 +6,9 @@ import { themes } from '@tamagui/themes/v2-themes'
 import { createMedia } from '@tamagui/react-native-media-driver'
 
 import { animations } from '@my/ui/src/animations'
+import { createMontserratFont } from '../../font-montserrat/src'
 
-const headingFont = createInterFont({
+const headingFont = createMontserratFont({
   size: {
     6: 15,
   },
@@ -35,14 +36,14 @@ const headingFont = createInterFont({
     15: -6,
   },
   face: {
-    700: { normal: 'InterBold' },
+    700: { normal: 'Montserrat-Bold' },
   },
 })
 
-const bodyFont = createInterFont(
+const bodyFont = createMontserratFont(
   {
     face: {
-      700: { normal: 'InterBold' },
+      700: { normal: 'Montserrat-Bold' },
     },
   },
   {
@@ -56,7 +57,7 @@ export const config = createTamagui({
   animations,
   shouldAddPrefersColorThemes: true,
   themeClassNameOnRoot: true,
-  
+
   // highly recommended to turn this on if you are using shorthands
   // to avoid having multiple valid style keys that do the same thing
   // we leave it off by default because it can be confusing as you onboard.

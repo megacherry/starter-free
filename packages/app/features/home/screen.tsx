@@ -3,13 +3,15 @@ import {
   Button,
   H1,
   Paragraph,
+  Select,
   Separator,
   Sheet,
+  Text,
   useToastController,
   XStack,
   YStack,
 } from '@my/ui'
-import { ChevronDown, ChevronUp } from '@tamagui/lucide-icons'
+import { Check, ChevronDown, ChevronUp } from '@tamagui/lucide-icons'
 import { useState } from 'react'
 import { useLink } from 'solito/link'
 
@@ -20,6 +22,25 @@ export function HomeScreen() {
 
   return (
     <YStack f={1} jc="center" ai="center" p="$4" gap="$4">
+      <Select disablePreventBodyScroll size="$3">
+        <Select.Trigger width={220} iconAfter={ChevronDown}>
+          <Select.Value placeholder="test" />
+        </Select.Trigger>
+
+        <Select.Content zIndex={200000}>
+          <Select.Viewport minWidth={200}>
+            <Select.Group>
+              <Select.Item key={1} index={1} value="test">
+                <Text>test not formatted</Text>
+                <Select.ItemIndicator marginLeft="auto">
+                  <Check size={16} />
+                </Select.ItemIndicator>
+              </Select.Item>
+            </Select.Group>
+          </Select.Viewport>
+        </Select.Content>
+      </Select>
+
       <YStack gap="$4" bc="$background">
         <H1 ta="center">Welcome to Tamagui.</H1>
         <Paragraph ta="center">
