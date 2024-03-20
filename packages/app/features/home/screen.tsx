@@ -6,7 +6,6 @@ import {
   Separator,
   Sheet,
   useToastController,
-  View,
   XStack,
   YStack,
 } from '@my/ui'
@@ -20,29 +19,8 @@ export function HomeScreen() {
   })
 
   return (
-    <YStack f={1} jc="center" ai="center" p="$4" space>
-      <XStack gap="$2">
-        <View
-          onMouseDown={() => console.log('mouse down')}
-          width={100}
-          height={100}
-          borderWidth={1}
-          borderColor="red"
-        >
-          <Paragraph>Not working</Paragraph>
-        </View>
-        <View
-          onPress={() => console.log('press')}
-          onMouseDown={() => console.log('mouse down')}
-          width={100}
-          height={100}
-          borderWidth={1}
-          borderColor="green"
-        >
-          <Paragraph>Working</Paragraph>
-        </View>
-      </XStack>
-      <YStack space="$4" bc="$background">
+    <YStack f={1} jc="center" ai="center" p="$4" gap="$4">
+      <YStack gap="$4" bc="$background">
         <H1 ta="center">Welcome to Tamagui.</H1>
         <Paragraph ta="center">
           Here's a basic starter to show navigating from one screen to another. This screen uses the
